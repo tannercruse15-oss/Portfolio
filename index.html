@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tanner Cruse | Cybersecurity Analyst</title>
+
+<style>
+/* ===== GLOBAL ===== */
+body {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    background: #05070d;
+    color: #00ffc3;
+    overflow-x: hidden;
+}
+
+/* ===== NAV ===== */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    border-bottom: 1px solid #00ffc3;
+}
+
+nav a {
+    color: #00ffc3;
+    text-decoration: none;
+}
+
+/* ===== HERO ===== */
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.hero img {
+    width: 260px;
+    border-radius: 12px;
+    box-shadow: 0 0 30px #00ffc3;
+}
+
+.hero-text {
+    max-width: 500px;
+    margin-left: 40px;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+.glow {
+    color: #00ffc3;
+    text-shadow: 0 0 10px #00ffc3;
+}
+
+/* ===== TERMINAL ===== */
+.terminal {
+    background: #000;
+    padding: 20px;
+    margin: 40px;
+    border: 1px solid #00ffc3;
+}
+
+.cursor {
+    display: inline-block;
+    width: 10px;
+    background: #00ffc3;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* ===== SKILLS ===== */
+.skill {
+    margin: 20px;
+}
+
+.bar {
+    height: 8px;
+    background: #222;
+}
+
+.progress {
+    height: 8px;
+    background: #00ffc3;
+    width: 0;
+}
+
+/* ===== CARDS ===== */
+.card {
+    border: 1px solid #00ffc3;
+    margin: 20px;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 0 20px #00ffc3;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+    padding: 10px 20px;
+    border: 1px solid #00ffc3;
+    display: inline-block;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #00ffc3;
+    color: #000;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section class="hero">
+<img src="YOUR_IMAGE_HERE.jpg" alt="Tanner Headshot">
+
+<div class="hero-text">
+<h1><span class="glow">Tanner Cruse</span></h1>
+<h2 id="typing"></h2>
+
+<p>Detect. Analyze. Protect.</p>
+
+<div class="btn">Download Resume</div>
+</div>
+</section>
+
+<section class="terminal" id="about">
+<p id="terminal-text"></p><span class="cursor"></span>
+</section>
+
+<section id="skills">
+<h2 style="text-align:center;">Skills</h2>
+
+<div class="skill">
+<p>SIEM / Splunk</p>
+<div class="bar"><div class="progress" data-width="90%"></div></div>
+</div>
+
+<div class="skill">
+<p>Log Analysis</p>
+<div class="bar"><div class="progress" data-width="85%"></div></div>
+</div>
+
+<div class="skill">
+<p>Wireshark</p>
+<div class="bar"><div class="progress" data-width="85%"></div></div>
+</div>
+
+</section>
+
+<section id="projects">
+<h2 style="text-align:center;">Projects</h2>
+
+<div class="card">
+<h3>SOC Level 1 Simulation</h3>
+<p>Analyzed logs and detected threats in simulated SOC environment.</p>
+</div>
+
+<div class="card">
+<h3>Phishing Analysis</h3>
+<p>Investigated malicious emails and extracted IOCs.</p>
+</div>
+
+</section>
+
+<section id="contact">
+<h2 style="text-align:center;">Contact</h2>
+<p style="text-align:center;">tanner.cruse15@gmail.com</p>
+</section>
+
+<script>
+
+/* ===== TYPING EFFECT ===== */
+const text = "Cybersecurity Analyst | SOC Level 1";
+let i = 0;
+
+function type() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, 50);
+    }
+}
+type();
+
+/* ===== TERMINAL EFFECT ===== */
+const terminalText = "Initializing profile...\nAccess granted.\nWelcome to Tanner Cruse's cybersecurity portfolio.\nThreat detection | Incident response | Network analysis";
+
+let j = 0;
+function terminalTyping() {
+    if (j < terminalText.length) {
+        document.getElementById("terminal-text").innerHTML += terminalText.charAt(j);
+        j++;
+        setTimeout(terminalTyping, 20);
+    }
+}
+terminalTyping();
+
+/* ===== SKILL BARS ANIMATION ===== */
+window.onload = () => {
+    document.querySelectorAll(".progress").forEach(bar => {
+        bar.style.width = bar.getAttribute("data-width");
+    });
+};
+
+</script>
+
+</body>
+</html>
